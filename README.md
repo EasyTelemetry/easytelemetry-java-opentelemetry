@@ -23,3 +23,24 @@
 -  **[HTTP 请求全量数据采集](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/HttpRequestDataExtract.md)**：完整采集 HTTP 请求链路中的核心数据，涵盖 Request Header、Response Header、Request Param、Request Url、Request Body 及 Response Body，满足请求链路的全维度可观测需求。
 -  **[Java 方法精细化数据采集](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/JavaMethodDataExtract.md)**：支持采集指定 Java 方法的入参、返回值及局部变量信息，实现方法级别的精细化可观测，助力问题定位与方法运行状态监控。
 -  **[代码轨迹追踪](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/CodeTrace.md)**：支持采集指定 Java 方法内部的代码执行轨迹，功能类似 Arthas 的 `trace` 命令，可精准统计经过了哪些行代码，每行代码的执行次数、执行耗时及时间占比，高效助力性能瓶颈定位与代码优化。
+
+## 版本说明
+### 当前版本
+**版本号**：v1.0.0（EasyTelemetry 首个正式版本）
+**基础依赖**：基于 OpenTelemetry Java Instrumentation v2.23.0 构建
+**测试范围**：已完成核心功能的单元测试、集成测试
+
+### 已知问题
+1.  **Java 方法数据采集/代码轨迹追踪**：在以下场景下可能出现采集失效或数据不准确的情况：
+    - 方法包含复杂字节码指令（如 `invokedynamic`、`jsr/ret`）或被其他字节码增强工具（如 Arthas、SkyWalking Agent）同时修改；
+
+### 问题反馈
+1.  反馈渠道：优先通过 GitHub Issues（[项目 Issues 地址](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/issues)）提交问题，需包含以下信息：
+    - 环境信息：JDK 版本、操作系统、中间件版本、探针启动参数；
+    - 问题复现步骤：配置文件内容、目标方法信息、请求链路；
+    - 异常信息：日志片段、JVM 崩溃转储文件（若有）。
+2.  响应时效：一般问题 1-3 个工作日回复，核心功能故障 24 小时内响应。
+
+### 兼容性说明
+1.  **JDK 兼容**：支持 JDK 8u200+、JDK 11.0.x、JDK 17.0.x等
+2.  **部署环境**：兼容 Linux/macOS/Windows 系统，推荐生产环境使用 Linux 系统。
