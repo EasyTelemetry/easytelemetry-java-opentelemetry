@@ -32,7 +32,7 @@
 
 ### 已知问题
 1.  **Java 方法数据采集/代码轨迹追踪**：在以下场景下可能出现采集失效或数据不准确的情况：
-    - 方法包含复杂字节码指令（如 `invokedynamic`、`jsr/ret`）或被其他字节码增强工具（如 Arthas、SkyWalking Agent）同时修改；
+    - 一些特殊代码场景或被其他字节码增强工具（如 Arthas、SkyWalking Agent）同时修改；
 
 ### 问题反馈
 1.  反馈渠道：优先通过 GitHub Issues（[项目 Issues 地址](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/issues)）提交问题，需包含以下信息：
