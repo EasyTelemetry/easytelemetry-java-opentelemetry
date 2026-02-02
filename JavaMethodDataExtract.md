@@ -107,10 +107,12 @@
 2.  加载本项目探针，启动 RuoYi 应用。
 
 ##### 原始代码与数据
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/2c940bfda00b494bb973223101036892.png)
+<img width="2080" height="1412" alt="image" src="https://github.com/user-attachments/assets/9e579c0f-bfca-4f38-97ad-d038aca84d7a" />
+
 
 ##### 采集效果
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/cac77f3ca5f84a63a7576eecf7adc7c9.png)
+<img width="3428" height="1726" alt="image" src="https://github.com/user-attachments/assets/5fcad930-2ded-4459-b4b8-00c94cca38ea" />
+
 
 ### 2. 采集方法返回值
 #### 演示准备
@@ -118,10 +120,12 @@
 2.  加载本项目探针，启动 RuoYi 应用。
 
 ##### 原始代码与数据
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/028faba06da545f4b01e5f700e8ec72c.png)
+<img width="2430" height="1836" alt="image" src="https://github.com/user-attachments/assets/9cf0dd10-b25e-40ff-ba5e-5342fc51f7c7" />
+
 
 ##### 采集效果
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/cde36c29c8444564b926f698d81df44d.png)
+<img width="3446" height="1710" alt="image" src="https://github.com/user-attachments/assets/79a49525-b764-4d35-82af-aa175a53f272" />
+
 
 ### 3. 采集方法局部变量
 #### 演示准备
@@ -129,10 +133,13 @@
 2.  加载本项目探针，启动 RuoYi 应用。
 
 ##### 原始代码与数据
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/608eb731689d4b7986b137f558667742.png)
+<img width="2432" height="1860" alt="image" src="https://github.com/user-attachments/assets/d6561238-9047-458d-abe2-a958be7fe074" />
+
 
 ##### 字节码编辑效果
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/056e5aacdf5548fa8c4cadb793d5b8b7.png)
+<img width="2294" height="780" alt="image" src="https://github.com/user-attachments/assets/5b0b02a1-e6fd-4cd2-896b-cf86fb2bd5c9" />
+
 
 ##### 采集效果
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/a96a8fa7d7a049d4b2eded43c00a1cd1.png)
+<img width="3450" height="1672" alt="a96a8fa7d7a049d4b2eded43c00a1cd1" src="https://github.com/user-attachments/assets/60a5d8c9-2d06-4011-84f2-f91275bb27b3" />
+
