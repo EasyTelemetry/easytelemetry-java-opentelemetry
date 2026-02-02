@@ -126,10 +126,12 @@
 2.  加载本项目探针，启动 RuoYi 应用。
 
 ### 原始代码与数据
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/0e120a248dda40ebbca1cdbc844bdf27.png)
+<img width="1538" height="1294" alt="image" src="https://github.com/user-attachments/assets/3d8e4dc3-58f1-422f-9515-04e0307e0053" />
+
 
 ### 最终采集效果
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/f964087edf964cd385f607bfc8d006bf.png)
+<img width="3440" height="1248" alt="image" src="https://github.com/user-attachments/assets/f93d9cf3-2e2a-4344-af60-5fcc67ddc250" />
+
 
 从演示结果可见，本功能已成功从 HTTP 响应体中采集到 `loginName` 字段，并写入业务入口 Span 的对应 Tag 中，采集效果符合预期。
 
