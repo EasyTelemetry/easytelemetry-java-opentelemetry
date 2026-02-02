@@ -21,5 +21,5 @@
 -  **[动态调整服务采样率](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/sampleRate.md)**：支持通过配置文件动态修改全局服务采样率，配置更新后即时生效。
 -  **[个性化接口采样率](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/sampleRate.md)**：支持为服务内不同接口配置差异化采样率，采样优先级遵循「上游采样优先，无上游采样时启用接口自定义采样率」的规则。
 -  **[HTTP 请求全量数据采集](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/HttpRequestDataExtract.md)**：完整采集 HTTP 请求链路中的核心数据，涵盖 Request Header、Response Header、Request Param、Request Url、Request Body 及 Response Body，满足请求链路的全维度可观测需求。
--  **Java 方法精细化数据采集**：支持采集指定 Java 方法的入参、返回值及局部变量信息，实现方法级别的精细化可观测，助力问题定位与方法运行状态监控。
+-  **[Java 方法精细化数据采集](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/JavaMethodDataExtract.md)**：支持采集指定 Java 方法的入参、返回值及局部变量信息，实现方法级别的精细化可观测，助力问题定位与方法运行状态监控。
 -  **代码轨迹追踪**：支持采集指定 Java 方法内部的代码执行轨迹，功能类似 Arthas 的 `trace` 命令，可精准统计经过了哪些行代码，每行代码的执行次数、执行耗时及时间占比，高效助力性能瓶颈定位与代码优化。
