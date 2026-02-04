@@ -19,6 +19,7 @@
       "javaMethodDesc": "com.ruoyi.system.service.impl.SysUserServiceImpl#selectUserList(com.ruoyi.common.core.domain.entity.SysUser)",
       "rootSpanName": "POST /system/user/list",
       "tagKey": "ruoyi.roleName",
+      "variable":"role",
       "lineNumber": 76
     }
   ]
@@ -33,7 +34,8 @@
 | `rootSpanName`   | 非必须       | 业务入口 Span 名称。配置后仅对该 Span 对应的业务请求执行采集；未配置时，对所有业务请求中匹配的方法统一采集。 |
 | `tagKey`         | 必须         | 采集数据写入业务入口 Span 时的 Attribute Key，用于后续检索和筛选该条采集数据。 |
 | `javaMethodDesc` | 必须         | 目标 Java 方法的唯一标识，格式为：`类全限定名#方法名(参数类型1,参数类型2...)`；<br>• 内部类需将最后一个 `.` 替换为 `$`；<br>• 基本数据类型（如 int、long）直接填写类型名；<br>• 多个参数类型用英文逗号 `,` 分隔。 |
-| `lineNumber`     | 采集局部变量时必须 | 目标局部变量的定义行号（仅支持采集定义行的局部变量）；下个版本将支持根据变量名，在任意行采集指定局部变量的属性值。 |
+| `variable` | 采集局部变量时必须  | 局部变量名称 |
+| `lineNumber`     | 采集局部变量时必须 | 指定在哪一行采集局部变量数据。 |
 
 ## 支持的 Java 方法数据采集类型
 ### 1. 采集方法入参
@@ -79,24 +81,29 @@
   "request_data_extract": [
     {
       "sourceType": 9,
-      "expression": "$.loginName",
-      "javaMethodDesc": "com.ruoyi.web.controller.system.SysUserController#authRole(java.lang.Long,org.springframework.ui.ModelMap)",
-      "tagKey": "ruoyi.userName",
-      "lineNumber": 252
+      "javaMethodDesc": "com.ruoyi.web.controller.system.SysUserController#resetPwdSave(com.ruoyi.common.core.domain.entity.SysUser)",
+      "tagKey": "user.salt",
+      "variable": "user",
+      "lineNumber": 232,
+      "expression": "$.salt"
     },
     {
       "sourceType": 9,
-      "expression": "$.[0].roleName",
-      "javaMethodDesc": "com.ruoyi.web.controller.system.SysUserController#authRole(java.lang.Long,org.springframework.ui.ModelMap)",
-      "tagKey": "ruoyi.roleName",
-      "lineNumber": 254
+      "javaMethodDesc": "com.ruoyi.web.controller.system.SysUserController#resetPwdSave(com.ruoyi.common.core.domain.entity.SysUser)",
+      "tagKey": "user.password",
+      "variable": "user",
+      "lineNumber": 233,
+      "expression": "$.password"
     }
   ]
 }
 ```
 **配置说明**：
-需通过 `lineNumber` 指定局部变量的定义行号，目前仅能采集该行定义的变量，下一个版本可再任意行采集指定名称的局部变量；表达式直接定位变量的目标属性，若变量为集合类型，可通过索引（如 `[0]`）定位元素。
-一个局部变量目前只支持一个采集配置。
+通过`variable`指定局部变量名称；通过 `lineNumber` 指定在哪行采集局部变量数据；`expression`直接定位变量的目标属性，若变量为集合类型，可通过索引（如 `[0]`）定位元素。
+
+一个方法可以定义多个局部变量采集配置；一个局部变量可定义多个数据采集配置；没有冲突；
+
+若局部变量在不同的作用域被重复定义(多个局部变量名称相同)，确保`lineNumber`指定的作用域是同一个(同一个变量存在多个采集配置)，EasyTelemetry能够根据`lineNumber`自定识别出采集目标变变量；
 
 ## 功能演示案例
 以开源业务系统 [RuoYi](https://gitee.com/y_project/RuoYi) 为演示工程，完整展示采集 Java 方法入参、返回值、局部变量的效果。
@@ -132,14 +139,15 @@
 1.  将「采集方法局部变量」对应的配置项写入项目配置文件；
 2.  加载本项目探针，启动 RuoYi 应用。
 
+
 ##### 原始代码与数据
-<img width="2432" height="1860" alt="image" src="https://github.com/user-attachments/assets/d6561238-9047-458d-abe2-a958be7fe074" />
+<img width="2420" height="1242" alt="image" src="https://github.com/user-attachments/assets/ee20203a-de37-4b10-9107-258d563a35e5" />
 
 
 ##### 字节码编辑效果
-<img width="2294" height="780" alt="image" src="https://github.com/user-attachments/assets/5b0b02a1-e6fd-4cd2-896b-cf86fb2bd5c9" />
+<img width="2000" height="862" alt="image" src="https://github.com/user-attachments/assets/985309a6-de8c-4803-81ab-10181c778dff" />
 
 
 ##### 采集效果
-<img width="3450" height="1672" alt="a96a8fa7d7a049d4b2eded43c00a1cd1" src="https://github.com/user-attachments/assets/60a5d8c9-2d06-4011-84f2-f91275bb27b3" />
+<img width="3450" height="1734" alt="image" src="https://github.com/user-attachments/assets/44a1d817-6309-4070-8fba-0952c97fd8b3" />
 
