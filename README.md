@@ -23,7 +23,7 @@
 -  **[HTTP 请求全量数据采集（已开源）](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/HttpRequestDataExtract.md)**：完整采集 HTTP 请求链路中的核心数据，涵盖 Request Header、Response Header、Request Param、Request Url、Request Body 及 Response Body，满足请求链路的全维度可观测需求。
 -  **[Java 方法精细化数据采集（已开源）](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/JavaMethodDataExtract.md)**：支持采集指定 Java 方法的入参、返回值及局部变量信息，实现方法级别的精细化可观测，助力问题定位与方法运行状态监控。
 -  **[代码轨迹追踪](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/CodeTrace.md)**：支持采集指定 Java 方法内部的代码执行轨迹，功能类似 Arthas 的 `trace` 命令，可精准统计经过了哪些行代码，每行代码的执行次数、执行耗时及时间占比，高效助力性能瓶颈定位与代码优化。
--  **[Online Debug](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/OnlineDebug.md)**：技术突破，非传统意义debug，而是对OpenTelemetry的技术边界拓展，使其具备传统意义上的debug功能而忽略debug的问题(阻塞，安全等),精准定位问题代码，debug信息留痕
+-  **[Online Debug](https://github.com/EasyTelemetry/easytelemetry-java-opentelemetry/blob/main/OnlineDebug.md)**：技术突破，非传统意义debug，而是对OpenTelemetry的技术边界拓展，使其具备传统意义上的debug功能又能规避传统debug的请求阻塞、应用安全、环境隔离等隐患，且debug信息留痕，在出现问题时便于追溯
 
 开源工程地址：https://github.com/EasyTelemetry/easytelemetry_opentelemetry-java-instrumentation
 
