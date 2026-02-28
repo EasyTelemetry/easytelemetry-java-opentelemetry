@@ -83,14 +83,16 @@
 - 通过try-catch保证Span正常结束。
 
 ### Debug效果展示
-<img width="3454" height="1820" alt="Debug效果展示" src="https://github.com/user-attachments/assets/f7dd491d-5d55-4ecc-91cd-02b8f7ff4862" />
+<img width="3454" height="1740" alt="image" src="https://github.com/user-attachments/assets/d3507b1d-86fa-4e4b-959e-fbf15ffb701a" />
+
 
 **Span及Tag说明：**
-- Span默认名称：`Package.Class/Method`；
-- `dept.ancestors`：第223行从局部变量`dept`中，按表达式`$.ancestors`采集到的值；
-- `dept.updateDept`：trace功能存储代码轨迹的tag；
-- `etel.service`：简单键值对类型的Tag配置；
-- `param[0].deptId`：从参数中，按表达式`$.[0].deptId`采集第一个参数的`deptId`属性值。
+- Span默认名称:`Package.Class/Method`；
+- `dept.ancestors`:第223行从局部变量`dept`中，按表达式`$.ancestors`采集到的值；
+- `dept.updateDept`:trace功能存储代码轨迹的tag；
+- `etel.service`:简单键值对类型的Tag配置；
+- `param[0].deptId`:从参数中，按表达式`$.[0].deptId`采集第一个参数的`deptId`属性值。
+- `updateDept.ret`:采集返回值
 
 ### 代码轨迹Decode结果
 <img width="1216" height="684" alt="代码轨迹Decode结果" src="https://github.com/user-attachments/assets/7e9b6592-d359-40e0-b69a-02a70f8d7152" />
