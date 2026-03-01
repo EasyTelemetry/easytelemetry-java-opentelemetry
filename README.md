@@ -3,6 +3,10 @@
 ## 项目介绍
 本项目基于 **[opentelemetry-java-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation)**（tag: [v2.23.0](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/v2.23.0)）进行二次开发，在**不改动原项目核心逻辑、完全兼容开源版本**的前提下，扩展了大量高实用性的自定义功能。后续项目将保持与 OpenTelemetry 官方版本的定期同步更新，同时持续丰富自定义能力，兼顾生态兼容性与业务功能性。
 
+使用答疑交流微信群二维码:
+<img width="892" height="1280" alt="image" src="https://github.com/user-attachments/assets/fd7beccd-ba02-43da-abcf-32c85bdfb9f2" />
+会定时更新二维码！
+
 ## 使用方式
 项目采用**配置监听模式**控制自定义功能的启停与参数调整，目前支持文件配置方式，通过实时监听配置文件的修改，实现配置内容的动态更新与功能同步，全程无需重启应用。
 
